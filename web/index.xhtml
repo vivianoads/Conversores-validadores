@@ -9,7 +9,10 @@
     <h:body>
         <h:form>
             <h:inputText value="#{compraBean.data}" converterMessage="ERROR">
+                
                 <f:converter converterId="conversao.ConversorDeData"/>
+                
+                <!--<f:validator validatorId="validacao.ValidadorDeData"/>-->
             </h:inputText>
 <!--            <h:inputText id="q" value="">
                 <f:validateLength maximum="1" minimum="1" />

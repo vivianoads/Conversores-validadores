@@ -22,6 +22,7 @@ import javax.faces.convert.FacesConverter;
 public class ConversorDeData implements Converter{
     @Override
     public Object getAsObject(FacesContext context, UIComponent component, String value) {
+        if(!ValidaDatas.validaStringData(value)) throw new ConverterException();
         Calendar calendar = Calendar.getInstance();
         calendar.set(new Integer(value.substring(6, 10)), (new Integer(value.substring(3, 5)) -1), new Integer(value.substring(0, 2)));
         return new Date(calendar.getTimeInMillis());
